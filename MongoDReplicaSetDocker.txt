@@ -1,0 +1,25 @@
+https://dba.stackexchange.com/questions/265236/how-can-we-use-transaction-in-mongodb-standalone-connection
+https://docs.mongodb.com/manual/reference/glossary/#std-term-standalone
+https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/
+
+https://hub.docker.com/_/mongo
+https://www.gyanblog.com/docker/how-run-mongodb-replicaset-docker/
+
+1:
+docker network create mongo-cluster-dev
+
+2:
+docker run -d --net mongo-cluster-dev -p 27020:27020 --name mongoset1 mongo mongod --replSet mongodb-replicaset --port 27020
+docker run -d --net mongo-cluster-dev -p 27018:27018 --name mongoset2 mongo mongod --replSet mongodb-replicaset --port 27018
+docker run -d --net mongo-cluster-dev -p 27019:27019 --name mongoset3 mongo mongod --replSet mongodb-replicaset --port 27019
+
+
+db = (new Mongo('localhost:27020')).getDB('test')
+config={"_id":"mongodb-replicaset","members":[{"_id":0,"host":"mongoset1:27017"},{"_id":1,"host":"mongoset2:27018"},{"_id":2,"host":"mongoset3:27019"}]}
+rs.initiate(config)
+
+
+mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
+
+mongodb://mongoset1:27020,mongoset2:27018,mongoset3:27019/test?replicaSet=mongodb-replicaset?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
+mongodb://mongoset1:27020,mongoset2:27018,mongoset3:27019/test?replicaSet=mongodb-replicaset?readPreference=primary&appname=MongoDB%20Compass&directConnection=false&ssl=false

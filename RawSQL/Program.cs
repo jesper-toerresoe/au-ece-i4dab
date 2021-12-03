@@ -50,9 +50,9 @@ namespace EFQuerying.RawSQL
             {
                 #region FromSqlRaw
                 var query = context.Blogs
-                    .FromSqlRaw("SELECT * FROM dbo.Blogs");
+                .FromSqlRaw("SELECT * FROM dbo.Blogs");
 
-                //.FromSqlRaw("SELECT * FROM dbo.Blogs; Drop Table Post;");
+                //.FromSqlRaw("SELECT * FROM dbo.Blogs; Drop Table Post;--");
                 var tos = query.ToQueryString();
                 var bloqs = query.ToList();
 

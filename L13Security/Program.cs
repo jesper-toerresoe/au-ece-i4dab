@@ -8,21 +8,21 @@ namespace L13Security
         static void Main(string[] args)
         {
             Console.WriteLine("Test af SQL Injections!");
-            Test1();
+            Test1("","");
         }
 
 
 
-        public static void Test1()
+        public static void Test1(string USername,string PW)
         {
             using (SqlConnection connection =
             new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Database = L13Security ;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
             {
                 // Create the Command and Parameter objects.
-                SqlCommand command = new SqlCommand($@"SELECT * FROM SYSUser WHERE LoginName ='RT' or 'Hacked' = 'Hacked' and PasswordEncryptedText =')/&FALJH)#WE?' or 'Hacked' = 'Hacked';", connection);
+                SqlCommand command = new SqlCommand($@"SELECT * FROM SYSUser WHERE LoginName ='JRT' or 'Hacked' = 'Hacked' and PasswordEncryptedText =')/&FALJH)#WE?' or 'Hacked' = 'Hacked';", connection);
                 SqlCommand commandSecure = new SqlCommand($@"SELECT * FROM SYSUser WHERE LoginName =@ln and PasswordEncryptedText =@PET;", connection);
-                commandSecure.Parameters.AddWithValue("@ln", "JRT");
-                commandSecure.Parameters.AddWithValue("@PET", ")/&FALJH)#WE?");
+                commandSecure.Parameters.AddWithValue("@ln", "JRT' or 'Hacked' = 'Hacked'");
+                commandSecure.Parameters.AddWithValue("@PET", ")/&FALJH)#WE? JRT' or 'Hacked' = 'Hacked'");
 
                 // Open the connection in a try/catch block.
                 // Create and execute the DataReader, writing the result

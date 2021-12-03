@@ -1,0 +1,1 @@
+﻿SELECT * FROM SYSUser WHERE LoginName ='jrt' or 'Hacked' = 'Hacked' and PasswordEncryptedText ='378wbt0wnb' or 'Hacked' = 'Hacked';

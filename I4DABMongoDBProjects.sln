@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBTransactions", "Mong
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBBook", "MongoDBBook\MongoDBBook.csproj", "{75EBB8F2-D05A-4E99-B28C-8AD04121E931}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L13Security", "L13Security\L13Security.csproj", "{CD24E3E2-C840-4144-8E82-C7013DA64CC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawSQL", "RawSQL\RawSQL.csproj", "{4228A5BF-D4CB-4818-B49D-CFEE2B0E5420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{75EBB8F2-D05A-4E99-B28C-8AD04121E931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75EBB8F2-D05A-4E99-B28C-8AD04121E931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75EBB8F2-D05A-4E99-B28C-8AD04121E931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD24E3E2-C840-4144-8E82-C7013DA64CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD24E3E2-C840-4144-8E82-C7013DA64CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD24E3E2-C840-4144-8E82-C7013DA64CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD24E3E2-C840-4144-8E82-C7013DA64CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4228A5BF-D4CB-4818-B49D-CFEE2B0E5420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4228A5BF-D4CB-4818-B49D-CFEE2B0E5420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4228A5BF-D4CB-4818-B49D-CFEE2B0E5420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4228A5BF-D4CB-4818-B49D-CFEE2B0E5420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
